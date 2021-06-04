@@ -1,7 +1,6 @@
-from django.shortcuts import render, HttpResponse
-
+from django.shortcuts import render
 # Create your views here.
 
 
 def index(request):
-    return HttpResponse('<h1>Aqui será a página principal da marmitaria da casa</h1>')
+    return render(request, 'restaurant/index.html')
