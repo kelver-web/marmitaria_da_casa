@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}{% endblock %}
 
 {% block content %}
 <html>
@@ -8,34 +8,31 @@
 	  	<div id="Welcome">
 	  		<!---Start navigation Bar -->
 	    	<nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
-		 		<a class="navbar-brand" href="#Welcome"></a>
-    				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuP5jYZ_oHP70EkR4E3KeF2Rf9ERmv5aj2JQ&usqp=CAU" width="50" height="50" class="rounded-circle" alt=""> Marmitaria da Casa
+		 		<a class="navbar-brand" href="#Welcome">
+    				<img src="{% static 'images/logo.png' '%}" width="50" height="50" class="d-inline-block" alt=""> Italian Restaurant
 		 		</a>
+		 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		    		<span class="navbar-toggler-icon"></span>
+		 		</button>
 			  	<div class="collapse navbar-collapse" id="navbarText">
 			    	<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-			        		<a class="nav-link" href="">Login</a>
-			      		</li>
-						<li class="nav-item">
-			        		<a class="nav-link" href="">Logout</a>
-			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="#Welcome">Bem vindo</a>
+			        		<a class="nav-link" href="#Welcome">Welcome</a>
 			      		</li>
 					    <li class="nav-item">
-					    	<a class="nav-link" href="#Restaurant">Restaurante</a>
-					    </li>
-					    <li class="nav-item">
-					    	<a class="nav-link" href="#Reservation">Reservas</a>
+					    	<a class="nav-link" href="#Restaurant">Restaurant</a>
 					    </li>
 					    <li class="nav-item">
 					    	<a class="nav-link" href="#Menu">Menu</a>
 					    </li>
-						<li class="nav-item">
-					    	<a class="nav-link" href="#Pedido">Pedido</a>
+					    <li class="nav-item">
+					    	<a class="nav-link" href="#Reservation">Reservation</a>
 					    </li>
 					    <li class="nav-item">
-					    	<a class="nav-link" href="#OurLocation">Nossa Localização</a>
+					    	<a class="nav-link" href="#OurLocation">Our Location</a>
+					    </li>
+					    <li class="nav-item">
+					    	<a class="nav-link" href="">Sair</a>
 					    </li>
 				    </ul>
 				</div>
@@ -50,23 +47,23 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-				    	<img class="d-block w-100 img-fluid img-slider" src="https://inpaonline.com.br/wp-content/uploads/2020/02/psicologia-e-comida-1024x597.jpg" alt="First slide">
+				    	<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider1.jpg' %}" alt="First slide">
 				    	<div class="carousel-caption">
-						    <h2>Bem Vindo!</h2>
+						    <h2>Welcome!</h2>
 							<p>...</p>
 						</div>
 				    </div>
 				    <div class="carousel-item">
-				      	<img class="d-block w-100 img-fluid img-slider" src="https://blog.consumer.com.br/wp-content/uploads/2020/11/culin%C3%A1ria-regional-brasileira.jpg" alt="Second slide">
+				      	<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider2.jpg' %}" alt="Second slide">
 				      	<div class="carousel-caption">
-						    <h2>Confira Nossa Comida Tradicional</h2>
+						    <h2>Traditional Italian Cuisine</h2>
 							<p>...</p>
 						</div>
 				    </div>
 				    <div class="carousel-item">
-				      	<img class="d-block w-100 img-fluid img-slider" src="https://www.djapa.com.br/wp-content/uploads/2019/12/comida-japonesa.jpg" alt="Third slide">
+				      	<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider3.jpg' %}" alt="Third slide">
 				      	<div class="carousel-caption">
-						    <h2>Faça seu pedido</h2>
+						    <h2>Selected Products</h2>
 							<p>...</p>
 						</div>
 				    </div>
@@ -86,92 +83,34 @@
 		<div class="container">
 		 	<div class="row" id="Restaurant">
 	    		<div class="col navMenu">
-	     		 	<h2 class="text-center" >~ Marmitaria da Casa ~</h2>
+	     		 	<h2 class="text-center" >~ Restaurant ~</h2>
 	    		</div>
   			</div>
   			<div class="row bg-light" >
   				<div class="col-md-6">
-  					<h3>Olá!.</h3>
-  					<p>Obrigado por aparecer aqui, somos um time tentando inovar em meio as adversidades, servimos uma deliciosa comida preparada como o que há de melhor. Leve apenas alguns minutos para navegar em nosso site aplicativo e verificar nosso menu. Esperamos que em breve você se junte a nós para uma excelente experiência culinária.</p>
-  					<h5>Uma Experiência Única</h5>
-  					<p>Aceitamos encomendas, Ligue para Marmitaia da Casa e faça a sua já. Siga nosso <a class="social-icon" href="https://www.instagram.com/marmitaria_da_casa1059/?igshid=1fgoss2387iru" target="_blank"><i class="fab fa-instagram"></i></a> e veja nossos deliciosos combos. Entregamos na sua residancia sem taxa de entrega.</p>
+  					<h3>Location</h3>
+  					<p>Thanks for stopping by. We are the last authentic Italian restaurant in Milan, serving delicious Italian cuisine cooked by the best chefs. It only takes a few minutes to browse through our website and check out our menu. We hope you'll soon join us for a superb Italian culinary experience.</p>
+  					<h5>A Unique Experience</h5>
+  					<p>Thanks for stopping by. We are the last authentic Italian restaurant in Milan, serving delicious Italian cuisine cooked by the best chefs. It only takes a few minutes to browse through our website and check out our menu. We hope you'll soon join us for a superb Italian culinary experience.</p>
   				</div>
-  				<div id="carouselExampleIndicators" class="carousel slide col-md-6" data-ride="carousel">
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img class="d-block w-100 img-fluid img-slider" src="https://img.elo7.com.br/product/original/22565B3/adesivo-parede-prato-comida-frango-salada-restaurante-lindo-adesivo-parede.jpg" alt="First slide">
-							<div class="carousel-caption">
-							</div>
-						</div>
-						<div class="carousel-item">
-							  <img class="d-block w-100 img-fluid img-slider" src="https://diaonline.ig.com.br/wp-content/uploads/2020/07/comida-caseira-brasilia_capa.jpg" alt="Second slide">
-							  <div class="carousel-caption">
-							</div>
-						</div>
-						<div class="carousel-item">
-							  <img class="d-block w-100 img-fluid img-slider" src="https://help.grandchef.com.br/wp-content/uploads/2020/11/delivery-de-comida-saudavel--1024x682.jpg" alt="Third slide">
-							  <div class="carousel-caption">
-							</div>
-						</div>
-					</div>
-				</div>
+  				<div class="col-md-6" data-aos="fade-up">
+  					<img class="img-fluid" src="{% static 'images/location.jpg' %}">
+  				</div>
   			</div>
   			<div class="row bg-light"><br></div>
   			<div class="row bg-light">
-				<div id="carouselExampleIndicators" class="carousel slide col-md-6" data-ride="carousel">
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img class="d-block w-100 img-fluid img-slider" src="https://www.olharconceito.com.br/imgsite/noticias/comida-congelada-como-fazer-00.jpg" alt="First slide">
-							<div class="carousel-caption">
-							</div>
-						</div>
-						<div class="carousel-item">
-							  <img class="d-block w-100 img-fluid img-slider" src="https://media-cdn.tripadvisor.com/media/photo-s/0d/b7/ae/ca/comida-gostosa.jpg" alt="Second slide">
-							  <div class="carousel-caption">
-							</div>
-						</div>
-						<div class="carousel-item">
-							  <img class="d-block w-100 img-fluid img-slider" src="https://media.gazetadopovo.com.br/2020/08/24143146/topo_texto_04-660x372.jpg" alt="Third slide">
-							  <div class="carousel-caption">
-							</div>
-						</div>
-					</div>
-				</div>
+  				<div class="col-md-6 order-md-1 order-2" data-aos="fade-up">
+  					<img class="img-fluid " src="{% static 'images/cuisine.jpg' %}">
+  				</div>
   				<div class="col-md-6 order-md-12 order-1">
-  					<h3>Cardápio limpo</h3>
-  					<p>A preparação do nosso cardápio é feita em um ambiente sanitizado seguindo todas as normas de higiene.</p>
-  					<h5>Pedidos</h5>
-  					<p>Faça seu pedido sem sair do conforto da sua casa, entregamos rapidinho. Delivery (84) 9 8867-7584 </p>
+  					<h3>Cuisine</h3>
+  					<p>Thanks for stopping by. We are the last authentic Italian restaurant in Milan, serving delicious Italian cuisine cooked by the best chefs. It only takes a few minutes to browse through our website and check out our menu. We hope you'll soon join us for a superb Italian culinary experience.</p>
+  					<h5>A Unique Experience</h5>
+  					<p>Thanks for stopping by. We are the last authentic Italian restaurant in Milan, serving delicious Italian cuisine cooked by the best chefs. It only takes a few minutes to browse through our website and check out our menu. We hope you'll soon join us for a superb Italian culinary experience.</p>
   				</div>
   			</div>
-  			
-			<!--- Start of Reservation-->
-			<hr>
-			<div class="row" id="Reservation">
-				<div class="col navMenu">
-	     		 	<h2 class="text-center">~ Horário de Reservas ~</h2>
-					  <br>
-				</div>
-			</div>
-			<div class="row">
-				<div class=" col-lg-12 reserve-container" data-aos="fade-up">
-					<img class="img-fluid image-reserve" src="">
-					<div class="reserve-text col-lg-12 ">
-						<div class="row">
-							<div class="col-6">
-							   	<h2 class="text-center">Solicitando pedido das</h2>
-							    <h5 class="text-center">8:00 às 10:00 (1ª rota) Seu pedido sairá a partir das 11:00</h5>
-							</div>
-							<div class="col-6">
-							    <h2 class="text-center">Solicitando pedido após as</h2>
-							    <h5 class="text-center">10:00 (2º rota) Seu pedido sairá a partir das 12:20</h5>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--- End of Restaurant -->
-			<!--- Start of Menu-->
+  			<!--- End of Restaurant -->
+  			<!--- Start of Menu-->
 			<div class="row" id="Menu">
 				<div class="col navMenu">
 	     		 	<h2 class="text-center" >~ Menu ~</h2>
@@ -180,9 +119,9 @@
 			<div class="row bg-light">
 				<div class="col-md-4" data-aos="slide-up">
 					<div class="card view zoom">
-  						<img class="card-img-top img-fluid " src="">
+  						<img class="card-img-top img-fluid " src="{% static 'images/meat-menu.jpg' %}">
 					  	<div class="card-body">
-					  		<h5 class="card-title">~ Cardápio do Dia ~</h5>
+					  		<h5 class="card-title">~ Meat Menu ~</h5>
 					    	<ul class="list-group list-group-flush">
 							    <li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
 							    <li class="list-group-item">Bruschette con maiale al curry</li>
@@ -195,7 +134,7 @@
 				</div>
 				<div class="col-md-4" data-aos="slide-up">
 					<div class="card">
-  						<img class="card-img-top img-fluid " src="">
+  						<img class="card-img-top img-fluid " src="{% static 'images/fish-menu.jpg' %}">
 					  	<div class="card-body">
 					  		<h5 class="card-title">~ Fish Menu ~</h5>
 					    	<ul class="list-group list-group-flush">
@@ -210,7 +149,7 @@
 				</div>
 				<div class="col-md-4" data-aos="slide-up">
 					<div class="card">
-  						<img class="card-img-top img-fluid" src="">
+  						<img class="card-img-top img-fluid" src="{% static 'images/menu-vegetarian.jpg' %}">
 					  	<div class="card-body">
 					  		<h5 class="card-title">~ Vegetarian Menu ~</h5>
 					    	<ul class="list-group list-group-flush">
@@ -225,121 +164,114 @@
 				</div>
 			</div>
 			<!--- End of Menu -->
-			<div class="row" id="Pedido">
+			<!--- Start of Reservation-->
+			<div class="row" id="Reservation">
 				<div class="col navMenu">
-	     		 	<h2 class="text-center" >~ Pedido ~</h2>
+	     		 	<h2 class="text-center">~ Reservation ~</h2>
 				</div>
 			</div>
-			<div class="row bg-light">
-				<div class="col">
-					<form action="submit" method="POST">
-						<div class="form-row">
-						  	<div class="form-group col-6">
-						  		<h3>Monte seu pedido</h3>
-						  		<label for="inputData"> Data</label>
-						  		<input type="datetime-local" class="form-control" id="inputData" placeholder="Data gg/mm/aaaa" name="data" required>
-						  	</div>
-						  	<div class="form-group col-6">
-						  		<h3>Detalhes</h3>
-						  		<label for="inputNome"> Nome</label>
-						  		<input type="text" class="form-control" id="inputNome" placeholder="nome" name="nome" required>
-						  	</div>
-						  	<div class="form-group col-6">
-						  		<label for="inputProteinas"> Proteínas</label>
-						  		<input type="#" class="form-control" id="inputProteinas" placeholder="proteínas" name="proteinas" required>
-						  	</div>
-						  	<div class="form-group col-6">
-						  		<label for="inputEmail"> Email</label>
-						  		<input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" required>
-						  	</div>
-						  	<div class="form-group col-6">
-						  		<label for="inputAcompanhamentos"> Acompanhamentos</label>
-						  		<input type="#" class="form-control" id="inputAcompanhamentos" placeholder="acompanhamentos" name="acompanhamentos" required>
-						  	</div>
-						  	<div class="form-group col-6">
-						  		<label for="inputTelefone"> Telefone</label>
-						  		<input type="tel" class="form-control" id="inputTelefone" placeholder="telefone" name="telefone" required>
-						  	</div>
-							<div class="form-group col-6">
-								<label for="inputSaladas"> Saladas</label>
-								<input type="#" class="form-control" id="inputSaladas" placeholder="saladas" name="saladas" required>
-							</div>
-							<div class="form-group col-6">
-								<label for="inputEndereco"> Endereço</label>
-								<input type="#" class="form-control" id="inputEndereco" placeholder="endereço" name="endereco" required>
-							</div>
-							<div class="form-group col-6">
-								<label for="inputQuantidade"> Quantidade</label>
-								<input type="#" class="form-control" id="inputQuantidade" placeholder="quantidade" name="quantidade" required>
-							</div>
-							<div class="form-group col-6">
-								<label for="inputValor"> Valor</label>
-								<input type="#" class="form-control" id="inputValor" placeholder="valor: 7,00 11,00 13,00 não digite vírgula" name="valor" required>
-							</div>
-  							<div class="form-group col-12">
-  								<label for="inputObservacoes"> Observações</label>
-								<textarea class="form-control" rows="4" id="inputObservacoes" placeholder="observações" name="observacao"></textarea>
-							</div>
-					 	</div>
+			<div class="row">
+				<div class=" col-lg-12 reserve-container" data-aos="fade-up">
+					<img class="img-fluid image-reserve" src="{% static 'images/reserve.jpg' %}">
+					<div class="reserve-text col-lg-12 ">
+						<h1 class="text-center">Timetables</h1>
 						<div class="row">
-							<div class="col-md-12 col-md-offset-12">
-							  	<a href="#">
-									<button type="submit" class="btn btn-secondary btn-block">Enviar</button>
-							  	</a>
+							<div class="col-6">
+							   	<h2 class="text-center">Lunch</h2>
+							    <h5 class="text-center">12:00 - 15:00</h5>
+							</div>
+							<div class="col-6">
+							    <h2 class="text-center">Dinner</h2>
+							    <h5 class="text-center">19:30 - 23:30</h5>
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 			<br>
-			<div class="row">
-				<div class="col-md-12 col-md-offset-12">
-					  <a href="">
-						<button type="submit" class="btn btn-secondary btn-block">Ver Pedido</button>
-					  </a>
+			<div class="row bg-light">
+				<div class="col">
+					<form>
+						<div class="form-row">
+						  	<div class="form-group col-6">
+						  		<h3>Reserve</h3>
+						  		<label for="inputDate"> Date</label>
+						  		<input type="date" class="form-control" id="inputDate" placeholder="Data gg/mm/aaaa">
+						  	</div>
+						  	<div class="form-group col-6">
+						  		<h3>Details</h3>
+						  		<label for="inputName"> Name</label>
+						  		<input type="text" class="form-control" id="inputName" placeholder="Name">
+						  	</div>
+						  	<div class="form-group col-6">
+						  		<label for="inputTime"> Timetables</label>
+						  		<input type="time" class="form-control" id="inputTime" placeholder="Timetables">
+						  	</div>
+						  	<div class="form-group col-6">
+						  		<label for="inputEmail"> Email</label>
+						  		<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+						  	</div>
+						  	<div class="form-group col-6">
+						  		<label for="inputNumber"> Number of Guests</label>
+						  		<input type="number" class="form-control" id="inputNumber" placeholder="Number of Guests">
+						  	</div>
+						  	<div class="form-group col-6">
+						  		<label for="inputCel"> Phone</label>
+						  		<input type="tel" class="form-control" id="inputCel" placeholder="Phone">
+						  	</div>
+  							<div class="form-group col-12">
+  								<label for="inputComment"> Further requests</label>
+								<textarea class="form-control" rows="4" id="inputComment" placeholder="Further requests"></textarea>
+							</div>
+					 	</div>
+						<div class="row">
+					  		<div class="col-md-4 col-md-offset-4">
+					  			<button type="submit" class="btn btn-secondary btn-block">Reserve</button>
+					  		</div>
+					  	</div>
+					</form>
 				</div>
 			</div>
 			<!--- End of Reserve -->
 			<!--- Start of Our Location -->
 			<div class="row" id="OurLocation">
 				<div class="col navMenu">
-					<h2 class="text-center">~ Nossa Localização ~</h2>
+					<h2 class="text-center">~ Our Location ~</h2>
 				</div>
 			</div>
-			<div class="container text-center">
-				<div class="mx-auto bg-light">
-					<div class="row">
-						<div class="col-md-7">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.279150258924!2d-35.25071398586632!3d-5.8161955589748775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b255234f9e4ddb%3A0xb57ce88da35adbf1!2sR.%20S%C3%A3o%20Domingos%20-%20Felipe%20Camar%C3%A3o%2C%20Natal%20-%20RN%2C%2059060-695!5e0!3m2!1spt-BR!2sbr!4v1621005184575!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-						</div>
-						<div class="col-md-5" style="padding-top: 40px;">
-							<h3>Endereço:</h3>
-							<p>Rua: São Domingos nº 1059</p>
-							<p>Bairro: Felipe Camarão Natal-RN</p>
-							<h3>Email:</h3>
-							<p>mail@example.com</p>
-							<h3>Telefone:</h3>
-							<p>Delivery (84) 9 8867-7584</p>
-							<p>Siga nosso instagram: <a class="social-icon" href="https://www.instagram.com/marmitaria_da_casa1059/?igshid=1fgoss2387iru" target="_blank"><i class="fab fa-instagram"></i></a> ou <a class="social-icon" href=""><i class="fab fa-whatsapp"></i></a></p>
-						</div>
-					</div>
+			<div class="row">
+				<div id="map" class="col-md-9 map"></div>
+				<div class="col-md-3">
+					<h3>Address:</h3>
+					<p>Viale Enrico Fermi, 20159 Milan, Mailand (Lombardia) </p>
+					<h3>Email:</h3>
+					<p>mail@example.com</p>
 				</div>
 			</div>
-			
 			<!--- End of Our Location -->
-			<hr>
 			<div class="row footer bg-light">
 				<div class="col">
-					<p class="text-center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuP5jYZ_oHP70EkR4E3KeF2Rf9ERmv5aj2JQ&usqp=CAU" width="40" height="40" class="rounded-circle" alt=""> Marmitaria da Casa</p>
+					<p class="text-center">Follow us: <a class="social-icon" href="https://www.facebook.com/rubiktechnologiesShpk/"><i class="fab fa-facebook"></i></a> <a class="social-icon" href="https://www.instagram.com/rubiktechnologies/"><i class="fab fa-instagram"></i></a></p>
 				</div>
 				<div class="col">
-					<p class="text-center">Copyright &copy; 2021</p>
+					<p class="text-center">Copyright &copy; 2018</p>
 				</div>
 				<div class="col">
-					<p class="text-center">Powered by: <a href="">Kelver Alves</a></p>
+					<p class="text-center">Powered by: <a href="https://rubik-technologies.com/">Rubik Technologies</a></p>
 				</div>
 			</div>
 		</div>
+		<footer class="container">
+			<div class= "row only-mobile">
+				<div class="col-6">
+					<a class="btn btn-primary btn-block text-center" href="tel:++390000000"><i class="fa fa-phone" aria-hidden="true"></i> Call</a>
+				</div>
+				<div class="col-6">
+					<a class="btn btn-success btn-block text-center" href="https://api.whatsapp.com/send?phone=+390000000"><i class="fab fa-whatsapp" aria-hidden="true"></i> Whatsapp</a>
+				</div>
+			</div>
+		</footer>
   	</body>
 </html>
+
 {% endblock %}
