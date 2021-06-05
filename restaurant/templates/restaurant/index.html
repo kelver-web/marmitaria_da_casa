@@ -25,9 +25,6 @@
 					    <li class="nav-item">
 					    	<a class="nav-link" href="#Cardapio">Cardápio</a>
 					    </li>
-					    <li class="nav-item">
-					    	<a class="nav-link" href="#Reservation">Reservas</a>
-					    </li>
 						<li class="nav-item">
 					    	<a class="nav-link" href="#Pedido">Pedido</a>
 					    </li>
@@ -124,7 +121,7 @@
 					<div class="card view zoom">
   						<img class="card-img-top img-fluid " src="{% static 'images/meat-menu.jpg' %}">
 					  	<div class="card-body">
-					  		<h5 class="card-title">~ Cardápio do Dia ~</h5>
+					  		<h5 class="card-title">~ Cardápio do Dia R$7.00 R$11.00 R$13.00 ~</h5>
 					    	<ul class="list-group list-group-flush">
 							    <li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
 							    <li class="list-group-item">Bruschette con maiale al curry</li>
@@ -137,65 +134,39 @@
 				</div>
 				<div class="col-md-4" data-aos="slide-up">
 					<div class="card">
-  						<img class="card-img-top img-fluid " src="{% static 'images/fish-menu.jpg' %}">
+  						<img class="card-img-top img-fluid " src="{% static 'images/bebidas.jpg' %}">
 					  	<div class="card-body">
-					  		<h5 class="card-title">~ Fish Menu ~</h5>
+					  		<h5 class="card-title">~ Bebidas de 250ml R$2,50 ~</h5>
 					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Carpaccio di polpo</li>
-							    <li class="list-group-item">Cozze al verde</li>
-							 	<li class="list-group-item">Cocktail di gamberi</li>
-							 	<li class="list-group-item">Risotto alla crema di scampi</li>
-							 	<li class="list-group-item">Ravioli di pesce con crema di scampi</li>
+							    <li class="list-group-item"><img src="{% static 'images/Coca-Cola-Can-icon.png' %}" width="30" height="30" alt=""> Coca Cola  <img src="{% static 'images/sprite.jpg' %}" alt="" width="34" height="34"> Sprite</li>
+							    <li class="list-group-item"><img src="{% static 'images/kuat.jpg' %}" alt="" width="35" height="35"> Guaraná Kuat</li>
+							 	<li class="list-group-item"><img src="{% static 'images/fanta.jpg' %}" alt="" width="26" height="26"> Fanta Laranja</li>
+							 	<li class="list-group-item"><img src="{% static 'images/uva.jpg' %}" alt="" width="28" height="28"> Fanta uva</li>
+							 	<li class="list-group-item"><img src="{% static 'images/gp.jpg' %}" alt="" width="35" height="35"> Guaraná/Pepsi de 1lt R$5,00</li>
 							</ul>
 					  	</div>
 					</div>
 				</div>
 				<div class="col-md-4" data-aos="slide-up">
 					<div class="card">
-  						<img class="card-img-top img-fluid" src="{% static 'images/menu-vegetarian.jpg' %}">
+  						<img class="card-img-top img-fluid" src="{% static 'images/reserve.jpg' %}">
 					  	<div class="card-body">
-					  		<h5 class="card-title">~ Vegetarian Menu ~</h5>
+					  		<h5 class="card-title">~ &#9888; Atenção ~</h5>
 					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Parmigiana di melanzane</li>
-							    <li class="list-group-item">Strudel con ricotta e spinaci</li>
-							 	<li class="list-group-item">Polpette di spinaci e ricotta</li>
-							 	<li class="list-group-item">Frittata di patate al forno</li>
-							 	<li class="list-group-item">Spaghetti con le polpettine vegetariane</li>
+							    <li class="list-group-item">Solicitando pedido das 8:00 às 10:00</li>
+							    <li class="list-group-item">(1ª rota) Seu pedido sairá a partir da 11:00</li>
+							 	<li class="list-group-item">Solicitando pedido após as 10:00</li>
+							 	<li class="list-group-item">(2º rota) Seu pedido sairá a partir das 12:20</li>
 							</ul>
 					  	</div>
 					</div>
 				</div>
 			</div>
 			<!--- End of Menu -->
-			<!--- Start of Reservation-->
-			<div class="row" id="Reservation">
-				<div class="col navMenu">
-	     		 	<h2 class="text-center">~ Reservas ~</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class=" col-lg-12 reserve-container" data-aos="fade-up">
-					<img class="img-fluid image-reserve" src="{% static 'images/reserve.jpg' %}">
-					<div class="reserve-text col-lg-12 ">
-						<h1 class="text-center">&#9888; Atenção</h1>
-						<br><br>
-						<div class="row">
-							<div class="col-6">
-							   	<h2 class="text-center">Solicitando pedido das</h2>
-							    <h5 class="text-center">8:00 às 10:00 (1ª rota) Seu pedido sairá a partir da 11:00</h5>
-							</div>
-							<div class="col-6">
-							    <h2 class="text-center">Solicitando pedido após as</h2>
-							    <h5 class="text-center">10:00 (2º rota) Seu pedido sairá a partir das 12:20</h5>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<br>
 			<div class="row" id="Pedido">
 				<div class="col navMenu">
 	     		 	<h2 class="text-center">~ Pedido ~</h2>
+					<h5 class="text-center">Informe seu pedido de acordo com a especificação do menu</h5>
 				</div>
 			</div>
 			<div class="row bg-light">
@@ -205,46 +176,54 @@
 							<div class="form-row">
 								<div class="form-group col-6">
 									<h3>Monte seu pedido</h3>
-									<label for="inputData"> Data</label>
-									<input type="datetime-local" class="form-control" id="inputData" placeholder="Data gg/mm/aaaa" name="data" required>
-								</div>
-								<div class="form-group col-6">
-									<h3>Detalhes</h3>
-									<label for="inputNome"> Nome</label>
-									<input type="text" class="form-control" id="inputNome" placeholder="nome" name="nome" required>
-								</div>
-								<div class="form-group col-6">
 									<label for="inputProteinas"> Proteínas</label>
-									<input type="#" class="form-control" id="inputProteinas" placeholder="proteínas" name="proteinas" required>
+									<input type="text" class="form-control" id="inputProteinas" placeholder="frango, carne ..." name="proteinas" required>
 								</div>
 								<div class="form-group col-6">
-									<label for="inputEmail"> Email</label>
-									<input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" required>
+									<h3>Digite os detalhes</h3>
+									<label for="inputAcompanhamentos">Acompanhamentos </label>
+									<input type="text" class="form-control" id="inputAcompanhamentos" placeholder="feijão, arroz..." name="acompanhamentos" required>
 								</div>
 								<div class="form-group col-6">
-									<label for="inputAcompanhamentos"> Acompanhamentos</label>
-									<input type="#" class="form-control" id="inputAcompanhamentos" placeholder="acompanhamentos" name="acompanhamentos" required>
+									<label for="inputSaladas"> Verduras e Legumes</label>
+									<input type="#" class="form-control" id="inputSaladas" placeholder="alface, cebola, tomate..." name="saladas" required>
 								</div>
 								<div class="form-group col-6">
-									<label for="inputTelefone"> Telefone</label>
-									<input type="tel" class="form-control" id="inputTelefone" placeholder="telefone" name="telefone" required>
+									<label for="inputBebida"> Bebida 250ml</label>
+									<input type="text" class="form-control" id="inputBebida" placeholder="coca, guaraná, fanta..." name="bebida">
+								</div>
+								<div class="form-group col-6">
+									<label for="inputQuantidade"> Quantidade</label>
+									<input type="#" class="form-control" id="inputQuantidade" placeholder="1, 2, 3 ..." name="quantidade" required>
+								</div>
+								<div class="form-group col-6">
+									<label for="inputValorRefeicao"> Valor da Refeição</label>
+									<input type="#" class="form-control" id="inputValorRefeicao" placeholder="7.00 11.00 13.00" name="valorrefeicao" required>
 								</div>
 							  <div class="form-group col-6">
-								  <label for="inputSaladas"> Saladas</label>
-								  <input type="#" class="form-control" id="inputSaladas" placeholder="saladas" name="saladas" required>
+								  <label for="inputBebidaDe1lt"> Bebida de 1Lt</label>
+								  <input type="#" class="form-control" id="inputBebidaDe1lt" placeholder="guaraná/pepsi" name="bebidadeumlt">
 							  </div>
 							  <div class="form-group col-6">
-								  <label for="inputEndereco"> Endereço</label>
-								  <input type="#" class="form-control" id="inputEndereco" placeholder="endereço" name="endereco" required>
+								  <label for="inputEndereco"> Valor da Bebida de 1Lt</label>
+								  <input type="#" class="form-control" id="inputEndereco" placeholder="5.00" name="endereco">
 							  </div>
 							  <div class="form-group col-6">
-								  <label for="inputQuantidade"> Quantidade</label>
-								  <input type="#" class="form-control" id="inputQuantidade" placeholder="quantidade" name="quantidade" required>
+								  <label for="inputNome"> Nome</label>
+								  <input type="text" class="form-control" id="inputNome" placeholder="nome" name="nome" required>
 							  </div>
 							  <div class="form-group col-6">
-								  <label for="inputValor"> Valor</label>
-								  <input type="#" class="form-control" id="inputValor" placeholder="valor: 7,00 11,00 13,00 não digite vírgula" name="valor" required>
+								  <label for="inputEmail"> E-mail</label>
+								  <input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="email" required>
 							  </div>
+							  <div class="form-group col-6">
+								<label for="inputTel"> Telefone</label>
+								<input type="#" class="form-control" id="inputTel" placeholder="telefone" name="telefone" required>
+								</div>
+								<div class="form-group col-6">
+									<label for="inputEndereco"> Endereço</label>
+									<input type="text" class="form-control" id="inputEndereco" placeholder="endereço" name="endereco" required>
+								</div>
 								<div class="form-group col-12">
 									<label for="inputObservacoes"> Observações</label>
 								  <textarea class="form-control" rows="4" id="inputObservacoes" placeholder="observações" name="observacao"></textarea>
