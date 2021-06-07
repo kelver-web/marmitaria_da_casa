@@ -4,269 +4,322 @@
 
 {% block content %}
 <html>
-	<body data-spy="scroll" data-target=".navbar" data-offset="50">
-	  	<div id="Welcome">
-	  		<!---Start navigation Bar -->
-	    	<nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
-		 		<a class="navbar-brand" href="#Welcome">
-    				<img class="rounded-circle" src="{% static 'images/marmitaria.png' '%}" width="50" height="50" class="d-inline-block" alt=""> Marmitaria da Casa
-		 		</a>
-		 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-		    		<span class="navbar-toggler-icon"></span>
-		 		</button>
-			  	<div class="collapse navbar-collapse" id="navbarText">
-			    	<ul class="navbar-nav ml-auto">
-			      		<li class="nav-item">
-			        		<a class="nav-link" href="#Welcome">Bem Vindo</a>
-			      		</li>
-					    <li class="nav-item">
-					    	<a class="nav-link" href="#Restaurant">Restaurante</a>
-					    </li>
-					    <li class="nav-item">
-					    	<a class="nav-link" href="#Cardapio">Cardápio</a>
-					    </li>
-						<li class="nav-item">
-					    	<a class="nav-link" href="#Pedido">Pedido</a>
-					    </li>
-					    <li class="nav-item">
-					    	<a class="nav-link" href="#OurLocation">Nossa Localização</a>
-					    </li>
-					    <li class="nav-item">
-					    	<a class="nav-link" href="">Sair</a>
-					    </li>
-				    </ul>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<div id="Welcome">
+		<!---Start navigation Bar -->
+		<nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
+			<a class="navbar-brand" href="#Welcome">
+				<img class="rounded-circle" src="{% static 'images/marmitaria.png' '%}" width="50" height="50"
+					class="d-inline-block" alt=""> Marmitaria da Casa
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+				aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav ml-auto">
+					{% if user.is_authenticated %}
+					<li class="nav-item">
+						<a class="nav-link" href="#Welcome">Bem Vindo</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#Restaurant">Restaurante</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#Cardapio">Cardápio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#Pedido">Pedido</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#OurLocation">Nossa Localização</a>
+					</li>
+					{% endif %}
+					{% if user.is_authenticated %}
+					<li class="nav-item">
+						<a class="nav-link" href="/accounts/logout">Sair</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>
+		</nav>
+		<!--- End Navigation Bar -->
+		<!--- Start Carousel -->
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider1.jpg' %}"
+						alt="First slide">
+					<div class="carousel-caption">
+						<h2>Bem Vindo(a)! {{ user }}</h2>
+						<p>...</p>
+					</div>
 				</div>
-			</nav>
-			<!--- End Navigation Bar -->
-			<!--- Start Carousel -->
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-				    	<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider1.jpg' %}" alt="First slide">
-				    	<div class="carousel-caption">
-						    <h2>Bem Vindo(a)!</h2>
-							<p>...</p>
-						</div>
-				    </div>
-				    <div class="carousel-item">
-				      	<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider2.jpg' %}" alt="Second slide">
-				      	<div class="carousel-caption">
-						    <h2>Confira Nossa Comida Tradicional</h2>
-							<p>...</p>
-						</div>
-				    </div>
-				    <div class="carousel-item">
-				      	<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider3.jpg' %}" alt="Third slide">
-				      	<div class="carousel-caption">
-						    <h2>Faça seu pedido</h2>
-							<p>...</p>
-						</div>
-				    </div>
+				<div class="carousel-item">
+					<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider2.jpg' %}"
+						alt="Second slide">
+					<div class="carousel-caption">
+						<h2>Confira Nossa Comida Tradicional</h2>
+						<p>...</p>
+					</div>
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-				</a>
+				<div class="carousel-item">
+					<img class="d-block w-100 img-fluid img-slider" src="{% static 'images/slider3.jpg' %}"
+						alt="Third slide">
+					<div class="carousel-caption">
+						<h2>Faça seu pedido</h2>
+						<p>...</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<!--- End of Carousel -->
+	<!--- Restaurant-->
+	<div class="container">
+		<div class="row" id="Restaurant">
+			<div class="col navMenu">
+				<h2 class="text-center">~ Restaurant ~</h2>
 			</div>
 		</div>
-			<!--- End of Carousel -->
-			<!--- Restaurant-->
-		<div class="container">
-		 	<div class="row" id="Restaurant">
-	    		<div class="col navMenu">
-	     		 	<h2 class="text-center" >~ Restaurant ~</h2>
-	    		</div>
-  			</div>
-  			<div class="row bg-light" >
-  				<div class="col-md-6">
-  					<h3>Olá!  usuario</h3>
-  					<p>Obrigado por aparecer aqui, somos um time tentando inovar em meio as adversidades, servimos uma deliciosa comida preparada como o que há de melhor. Leve apenas alguns minutos para navegar em nosso site aplicativo e verificar nosso menu. Esperamos que em breve você se junte a nós para uma excelente experiência culinária.</p>
-  					<h5>Uma Experiência Única</h5>
-  					<p>Aceitamos encomendas, Ligue para Marmitaia da Casa e faça já a sua. Siga nosso <a class="social-icon" href="https://www.instagram.com/marmitaria_da_casa1059/?igshid=1fgoss2387iru" target="_blank"><i class="fab fa-instagram"></i></a> e veja nossos deliciosos combos. Entregamos na sua residência sem taxa de entrega.</p>
-  				</div>
-  				<div class="col-md-6" data-aos="fade-up">
-  					<img class="img-fluid" src="{% static 'images/location.jpg' %}">
-  				</div>
-  			</div>
-  			<div class="row bg-light"><br></div>
-  			<div class="row bg-light">
-  				<div class="col-md-6 order-md-1 order-2" data-aos="fade-up">
-  					<img class="img-fluid " src="{% static 'images/cuisine.jpg' %}">
-  				</div>
-  				<div class="col-md-6 order-md-12 order-1">
-					<h3>Cardápio limpo</h3>
-					<p>A preparação do nosso cardápio é feito em um ambiente sanitizado seguindo todas as normas de higiene.</p>
-					<h5>Pedidos</h5>
-					<p>Faça seu pedido sem sair do conforto da sua casa, entregamos rapidinho. Delivery (84) 9 8867-7584 </p>
-  				</div>
-  			</div>
-  			<!--- End of Restaurant -->
-  			<!--- Start of Menu-->
-			<div class="row" id="Cardapio">
-				<div class="col navMenu">
-	     		 	<h2 class="text-center" >~ Cardápio ~</h2>
-				</div>
+		<div class="row bg-light">
+			<div class="col-md-6">
+				<h3>Olá! {{ user }}</h3>
+				<p>Obrigado por aparecer aqui, somos um time tentando inovar em meio as adversidades, servimos uma
+					deliciosa comida preparada como o que há de melhor. Leve apenas alguns minutos para navegar em nosso
+					site aplicativo e verificar nosso menu. Esperamos que em breve você se junte a nós para uma
+					excelente experiência culinária.</p>
+				<h5>Uma Experiência Única</h5>
+				<p>Aceitamos encomendas, Ligue para Marmitaia da Casa e faça já a sua. Siga nosso <a class="social-icon"
+						href="https://www.instagram.com/marmitaria_da_casa1059/?igshid=1fgoss2387iru" target="_blank"><i
+							class="fab fa-instagram"></i></a> e veja nossos deliciosos combos. Entregamos na sua
+					residência sem taxa de entrega.</p>
 			</div>
-			<div class="row bg-light">
-				<div class="col-md-4" data-aos="slide-up">
-					<div class="card view zoom">
-  						<img class="card-img-top img-fluid " src="{% static 'images/meat-menu.jpg' %}">
-					  	<div class="card-body">
-					  		<h5 class="card-title">~ Cardápio do Dia R$7.00 R$11.00 R$13.00 ~</h5>
-					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
-							    <li class="list-group-item">Bruschette con maiale al curry</li>
-							 	<li class="list-group-item">Uova al prosciutto</li>
-							 	<li class="list-group-item">Vitello tonnato</li>
-							 	<li class="list-group-item">Fesa di tacchino marinata con olive</li>
-							</ul>
-					  	</div>
-					</div>
-				</div>
-				<div class="col-md-4" data-aos="slide-up">
-					<div class="card">
-  						<img class="card-img-top img-fluid " src="{% static 'images/bebidas.jpg' %}">
-					  	<div class="card-body">
-					  		<h5 class="card-title">~ Bebidas de 250ml R$2,50 ~</h5>
-					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item"><img src="{% static 'images/Coca-Cola-Can-icon.png' %}" width="30" height="30" alt=""> Coca Cola  <img src="{% static 'images/sprite.jpg' %}" alt="" width="34" height="34"> Sprite</li>
-							    <li class="list-group-item"><img src="{% static 'images/kuat.jpg' %}" alt="" width="35" height="35"> Guaraná Kuat</li>
-							 	<li class="list-group-item"><img src="{% static 'images/fanta.jpg' %}" alt="" width="26" height="26"> Fanta Laranja</li>
-							 	<li class="list-group-item"><img src="{% static 'images/uva.jpg' %}" alt="" width="28" height="28"> Fanta uva</li>
-							 	<li class="list-group-item"><img src="{% static 'images/gp.jpg' %}" alt="" width="35" height="35"> Guaraná/Pepsi de 1lt R$5,00</li>
-							</ul>
-					  	</div>
-					</div>
-				</div>
-				<div class="col-md-4" data-aos="slide-up">
-					<div class="card">
-  						<img class="card-img-top img-fluid" src="{% static 'images/reserve.jpg' %}">
-					  	<div class="card-body">
-					  		<h5 class="card-title">~ &#9888; Atenção ~</h5>
-					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Solicitando pedido das 8:00 às 10:00</li>
-							    <li class="list-group-item">(1ª rota) Seu pedido sairá a partir da 11:00</li>
-							 	<li class="list-group-item">Solicitando pedido após as 10:00</li>
-							 	<li class="list-group-item">(2º rota) Seu pedido sairá a partir das 12:20</li>
-							</ul>
-					  	</div>
+			<div class="col-md-6" data-aos="fade-up">
+				<img class="img-fluid" src="{% static 'images/location.jpg' %}">
+			</div>
+		</div>
+		<div class="row bg-light"><br></div>
+		<div class="row bg-light">
+			<div class="col-md-6 order-md-1 order-2" data-aos="fade-up">
+				<img class="img-fluid " src="{% static 'images/cuisine.jpg' %}">
+			</div>
+			<div class="col-md-6 order-md-12 order-1">
+				<h3>Cardápio limpo</h3>
+				<p>A preparação do nosso cardápio é feito em um ambiente sanitizado seguindo todas as normas de higiene.
+				</p>
+				<h5>Pedidos</h5>
+				<p>Faça seu pedido sem sair do conforto da sua casa, entregamos rapidinho. Delivery (84) 9 8867-7584
+				</p>
+			</div>
+		</div>
+		<!--- End of Restaurant -->
+		<!--- Start of Menu-->
+		<div class="row" id="Cardapio">
+			<div class="col navMenu">
+				<h2 class="text-center">~ Cardápio ~</h2>
+			</div>
+		</div>
+		<div class="row bg-light">
+			<div class="col-md-4" data-aos="slide-up">
+				<div class="card view zoom">
+					<img class="card-img-top img-fluid " src="{% static 'images/meat-menu.jpg' %}">
+					<div class="card-body">
+						<h5 class="card-title">~ Cardápio do Dia R$7.00 R$11.00 R$13.00 ~</h5>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
+							<li class="list-group-item">Bruschette con maiale al curry</li>
+							<li class="list-group-item">Uova al prosciutto</li>
+							<li class="list-group-item">Vitello tonnato</li>
+							<li class="list-group-item">Fesa di tacchino marinata con olive</li>
+						</ul>
 					</div>
 				</div>
 			</div>
-			<!--- End of Menu -->
-			<div class="row" id="Pedido">
-				<div class="col navMenu">
-	     		 	<h2 class="text-center">~ Pedido ~</h2>
-					<h5 class="text-center">Informe seu pedido de acordo com a especificação do menu</h5>
+			<div class="col-md-4" data-aos="slide-up">
+				<div class="card">
+					<img class="card-img-top img-fluid " src="{% static 'images/bebidas.jpg' %}">
+					<div class="card-body">
+						<h5 class="card-title">~ Bebidas de 250ml R$2,50 ~</h5>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item"><img src="{% static 'images/Coca-Cola-Can-icon.png' %}"
+									width="30" height="30" alt=""> Coca Cola <img src="{% static 'images/sprite.jpg' %}"
+									alt="" width="34" height="34"> Sprite</li>
+							<li class="list-group-item"><img src="{% static 'images/kuat.jpg' %}" alt="" width="35"
+									height="35"> Guaraná Kuat</li>
+							<li class="list-group-item"><img src="{% static 'images/fanta.jpg' %}" alt="" width="26"
+									height="26"> Fanta Laranja</li>
+							<li class="list-group-item"><img src="{% static 'images/uva.jpg' %}" alt="" width="28"
+									height="28"> Fanta uva</li>
+							<li class="list-group-item"><img src="{% static 'images/gp.jpg' %}" alt="" width="35"
+									height="35"> Guaraná/Pepsi de 1lt R$5,00</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="row bg-light">
-				<div class="col">
-					<form>
+			<div class="col-md-4" data-aos="slide-up">
+				<div class="card">
+					<img class="card-img-top img-fluid" src="{% static 'images/reserve.jpg' %}">
+					<div class="card-body">
+						<h5 class="card-title">~ &#9888; Atenção ~</h5>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Solicitando pedido das 8:00 às 10:00</li>
+							<li class="list-group-item">(1ª rota) Seu pedido sairá a partir da 11:00</li>
+							<li class="list-group-item">Solicitando pedido após as 10:00</li>
+							<li class="list-group-item">(2º rota) Seu pedido sairá a partir das 12:20</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--- End of Menu -->
+		<div class="row" id="Pedido">
+			<div class="col navMenu">
+				<h2 class="text-center">~ Pedido ~</h2>
+				<h5 class="text-center">Informe seu pedido de acordo com a especificação do menu</h5>
+			</div>
+		</div>
+		<div class="row bg-light">
+			<div class="col">
+				<form>
+					<div class="form-row">
 						<div class="form-row">
-							<div class="form-row">
-								<div class="form-group col-6">
-									<h3>Monte seu pedido</h3>
-									<label for="inputProteinas"> Proteínas</label>
-									<input type="text" class="form-control" id="inputProteinas" placeholder="frango, carne ..." name="proteinas" required>
-								</div>
-								<div class="form-group col-6">
-									<h3>Digite os detalhes</h3>
-									<label for="inputAcompanhamentos">Acompanhamentos </label>
-									<input type="text" class="form-control" id="inputAcompanhamentos" placeholder="feijão, arroz..." name="acompanhamentos" required>
-								</div>
-								<div class="form-group col-6">
-									<label for="inputSaladas"> Verduras e Legumes</label>
-									<input type="#" class="form-control" id="inputSaladas" placeholder="alface, cebola, tomate..." name="saladas" required>
-								</div>
-								<div class="form-group col-6">
-									<label for="inputBebida"> Bebida 250ml</label>
-									<input type="text" class="form-control" id="inputBebida" placeholder="coca, guaraná, fanta..." name="bebida">
-								</div>
-								<div class="form-group col-6">
-									<label for="inputQuantidade"> Quantidade</label>
-									<input type="#" class="form-control" id="inputQuantidade" placeholder="1, 2, 3 ..." name="quantidade" required>
-								</div>
-								<div class="form-group col-6">
-									<label for="inputValorRefeicao"> Valor da Refeição</label>
-									<input type="#" class="form-control" id="inputValorRefeicao" placeholder="7.00 11.00 13.00" name="valorrefeicao" required>
-								</div>
-							  <div class="form-group col-6">
-								  <label for="inputBebidaDe1lt"> Bebida de 1Lt</label>
-								  <input type="#" class="form-control" id="inputBebidaDe1lt" placeholder="guaraná/pepsi" name="bebidadeumlt">
-							  </div>
-							  <div class="form-group col-6">
-								  <label for="inputEndereco"> Valor da Bebida de 1Lt</label>
-								  <input type="#" class="form-control" id="inputEndereco" placeholder="5.00" name="endereco">
-							  </div>
-							  <div class="form-group col-6">
-								  <label for="inputNome"> Nome</label>
-								  <input type="text" class="form-control" id="inputNome" placeholder="nome" name="nome" required>
-							  </div>
-							  <div class="form-group col-6">
-								  <label for="inputEmail"> E-mail</label>
-								  <input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="email" required>
-							  </div>
-							  <div class="form-group col-6">
+							<div class="form-group col-6">
+								<h3>Monte seu pedido</h3>
+								<label for="inputProteinas"> Proteínas</label>
+								<input type="text" class="form-control" id="inputProteinas"
+									placeholder="frango, carne ..." name="proteinas" required>
+							</div>
+							<div class="form-group col-6">
+								<h3>Digite os detalhes</h3>
+								<label for="inputBebidaPequena">Bebida 250ml </label>
+								<input type="text" class="form-control" id="inputBebidaPequena"
+									placeholder="coca, guaraná, fanta..." name="bebidaPequena">
+							</div>
+							<div class="form-group col-6">
+								<label for="inputAcompanhamentos">Acompanhamentos </label>
+								<input type="#" class="form-control" id="inputAcompanhamentos"
+									placeholder="feijão, arroz..." name="acompanhamentos" required>
+							</div>
+							<div class="form-group col-6">
+								<label for="inputQuantBebidaPequena">Quantidade Bebida 250ml</label>
+								<input type="text" class="form-control" id="inputQuantBebidaPequena"
+									placeholder="1, 2, 3..." name="quantidadeBebidaPequena">
+							</div>
+							<div class="form-group col-6">
+								<label for="inputSaladas">Saladas</label>
+								<input type="#" class="form-control" id="inputSaladas" placeholder="tomate, alface ..."
+									name="saladas" required>
+							</div>
+							<div class="form-group col-6">
+								<label for="inputBebidaGrande">Bebida de 1Lt</label>
+								<input type="text" class="form-control" id="inputBebidaGrande"
+									placeholder="pepsi, guaraná..." name="bebidaGrande">
+							</div>
+							<div class="form-group col-6">
+								<label for="inputValorRefeicao">Valor da Refeição</label>
+								<input type="#" class="form-control" id="inputValorRefeicao"
+									placeholder="7.00 11.00 13.00" name="valorrefeicao" required>
+							</div>
+							<div class="form-group col-6">
+								<label for="inputBebidaDe1lt">Quantidade Bebida 1Lt</label>
+								<input type="#" class="form-control" id="inputBebidaDe1lt" placeholder="1, 2, 3..."
+									name="bebidadeumlt">
+							</div>
+							<div class="form-group col-6">
+								<label for="inputNome">Nome</label>
+								<input type="#" class="form-control" id="inputNome" placeholder="nome" name="nome"
+									required>
+							</div>
+							<div class="form-group col-6">
+								<label for="inputEndereco">Endereço</label>
+								<input type="text" class="form-control" id="inputEndereco" placeholder="endereço"
+									name="endereço" required>
+							</div>
+							<div class="form-group col-6">
+								<label for="inputnumero"> Nº</label>
+								<input type="text" class="form-control" id="inputnumero" placeholder="nº" name="numero"
+									required>
+							</div>
+							<div class="form-group col-6">
+								<label for="inputBairo"> Bairro</label>
+								<input type="text" class="form-control" id="inputBairo" placeholder="bairro"
+									name="email" required>
+							</div>
+							<div class="form-group col-6">
 								<label for="inputTel"> Telefone</label>
-								<input type="#" class="form-control" id="inputTel" placeholder="telefone" name="telefone" required>
-								</div>
-								<div class="form-group col-6">
-									<label for="inputEndereco"> Endereço</label>
-									<input type="text" class="form-control" id="inputEndereco" placeholder="endereço" name="endereco" required>
-								</div>
-								<div class="form-group col-12">
-									<label for="inputObservacoes"> Observações</label>
-								  <textarea class="form-control" rows="4" id="inputObservacoes" placeholder="observações" name="observacao"></textarea>
-							  </div>
-						   </div>
-					 	</div>
-						<div class="row">
-					  		<div class="col-md-4 col-md-offset-4">
-					  			<button type="submit" class="btn btn-secondary btn-block">Reserve</button>
-					  		</div>
-					  	</div>
-					</form>
-				</div>
-			</div>
-			<!--- End of Reserve -->
-			<!--- Start of Our Location -->
-			<div class="row" id="OurLocation">
-				<div class="col navMenu">
-					<h2 class="text-center">~ Nossa Localização ~</h2>
-				</div>
-			</div>
-			<div class="container text-center">
-				<div class="mx-auto bg-light">
-					<div class="row">
-						<div class="col-md-7">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.279150258924!2d-35.25071398586632!3d-5.8161955589748775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b255234f9e4ddb%3A0xb57ce88da35adbf1!2sR.%20S%C3%A3o%20Domingos%20-%20Felipe%20Camar%C3%A3o%2C%20Natal%20-%20RN%2C%2059060-695!5e0!3m2!1spt-BR!2sbr!4v1621005184575!5m2!1spt-BR!2sbr" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-						</div>
-						<div class="col-md-5" style="padding-top: 40px;">
-							<h3>Endereço:</h3>
-							<p>Rua: São Domingos nº 1059</p>
-							<p>Bairro: Felipe Camarão Natal-RN</p>
-							<h3>Email:</h3>
-							<p>mail@example.com</p>
-							<h3>Telefone:</h3>
-							<p>Delivery (84) 9 8867-7584</p>
-							<p>Siga nosso instagram: <a class="social-icon" href="https://www.instagram.com/marmitaria_da_casa1059/?igshid=1fgoss2387iru" target="_blank"><i class="fab fa-instagram"></i></a> ou <a class="social-icon" href=""><i class="fab fa-whatsapp"></i></a></p>
+								<input type="#" class="form-control" id="inputTel" placeholder="telefone"
+									name="telefone" required>
+							</div>
+							<div class="form-group col-6">
+								<label for="inputEmail"> E-mail</label>
+								<input type="email" class="form-control" id="inputBairo" placeholder="e-mail"
+									name="email" required>
+							</div>
+							<div class="form-group col-12">
+								<label for="inputObservacoes"> Observações</label>
+								<textarea class="form-control" rows="4" id="inputObservacoes" placeholder="observações"
+									name="observacao"></textarea>
+							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-4 col-md-offset-4">
+							<button type="submit" class="btn btn-secondary btn-block">Reserve</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--- End of Reserve -->
+		<!--- Start of Our Location -->
+		<div class="row" id="OurLocation">
+			<div class="col navMenu">
+				<h2 class="text-center">~ Nossa Localização ~</h2>
+			</div>
+		</div>
+		<div class="container text-center">
+			<div class="mx-auto bg-light">
+				<div class="row">
+					<div class="col-md-7">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.279150258924!2d-35.25071398586632!3d-5.8161955589748775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b255234f9e4ddb%3A0xb57ce88da35adbf1!2sR.%20S%C3%A3o%20Domingos%20-%20Felipe%20Camar%C3%A3o%2C%20Natal%20-%20RN%2C%2059060-695!5e0!3m2!1spt-BR!2sbr!4v1621005184575!5m2!1spt-BR!2sbr"
+							width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					</div>
+					<div class="col-md-5" style="padding-top: 40px;">
+						<h3>Endereço:</h3>
+						<p>Rua: São Domingos nº 1059</p>
+						<p>Bairro: Felipe Camarão Natal-RN</p>
+						<h3>Email:</h3>
+						<p>mail@example.com</p>
+						<h3>Telefone:</h3>
+						<p>Delivery (84) 9 8867-7584</p>
+						<p>Siga nosso instagram: <a class="social-icon"
+								href="https://www.instagram.com/marmitaria_da_casa1059/?igshid=1fgoss2387iru"
+								target="_blank"><i class="fab fa-instagram"></i></a> ou <a class="social-icon"
+								href=""><i class="fab fa-whatsapp"></i></a></p>
+					</div>
 				</div>
+			</div>
 			<!--- End of Our Location -->
 			<div class="row footer bg-light">
 				<div class="col">
-					<p class="text-center"><img class="rounded-circle" src="{% static 'images/marmitaria.png' '%}" width="40" height="40" class="d-inline-block" alt="" > Marmitaria da Casa</p>
+					<p class="text-center"><img class="rounded-circle" src="{% static 'images/marmitaria.png' '%}"
+							width="40" height="40" class="d-inline-block" alt=""> Marmitaria da Casa</p>
 				</div>
 				<div class="col">
 					<p class="text-center">Copyright &copy; 2021</p>
@@ -276,7 +329,8 @@
 				</div>
 			</div>
 		</div>
-  	</body>
+</body>
+
 </html>
 
 {% endblock %}
