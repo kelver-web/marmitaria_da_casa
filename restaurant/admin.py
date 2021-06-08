@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from restaurant.models import Pedido
+from restaurant.models import Pedido, Cadapio
 
 # Register your models here.
 
@@ -15,4 +15,9 @@ class PedidoAdmin(admin.ModelAdmin):
     ordering = ('usuario', )
 
 
+class CardapioAdmin(admin.ModelAdmin):
+    list_display = ['nome', 'proteina', 'acompanhamento', 'salada']
+
+
 admin.site.register(Pedido, PedidoAdmin)
+admin.site.register(Cadapio, CardapioAdmin)

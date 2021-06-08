@@ -139,13 +139,13 @@
 				<div class="card view zoom">
 					<img class="card-img-top img-fluid " src="{% static 'images/meat-menu.jpg' %}">
 					<div class="card-body">
-						<h5 class="card-title">~ Cardápio do Dia R$7.00 R$11.00 R$13.00 ~</h5>
+						<h5 class="card-title">~ Cardápio do Dia ~ <br> R$7.00 R$11.00 R$13.00 </h5>
+						{% for cardapio in cardapios %}
 						<ul class="list-group list-group-flush">
-							<li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
-							<li class="list-group-item">Bruschette con maiale al curry</li>
-							<li class="list-group-item">Uova al prosciutto</li>
-							<li class="list-group-item">Vitello tonnato</li>
-							<li class="list-group-item">Fesa di tacchino marinata con olive</li>
+							<li class="list-group-item"><b>Proteínas:</b> {{ cardapio.proteina }} </b><b><br> Obs: apenas duas proteínas por refeição, escolha a sua.</b></li>
+							<li class="list-group-item"><b>Acompanhamentos:</b> {{ cardapio.acompanhamento }}</li>
+							<li class="list-group-item"><b>Saladas:</b> {{ cardapio.salada }}</li>
+							{% endfor %}
 						</ul>
 					</div>
 				</div>
@@ -157,14 +157,16 @@
 						<h5 class="card-title">~ Bebidas de 250ml R$2,50 ~</h5>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item"><img src="{% static 'images/Coca-Cola-Can-icon.png' %}"
-									width="30" height="30" alt=""> Coca Cola <img src="{% static 'images/sprite.jpg' %}"
-									alt="" width="34" height="34"> Sprite</li>
+									width="30" height="30" alt="">Coca Cola
+							<li class="list-group-item">
+							<img src="{% static 'images/sprite.jpg' %}"
+							alt="" width="34" height="34">Sprite</li>
 							<li class="list-group-item"><img src="{% static 'images/kuat.jpg' %}" alt="" width="35"
-									height="35"> Guaraná Kuat</li>
+									height="35">Guaraná Kuat</li>
 							<li class="list-group-item"><img src="{% static 'images/fanta.jpg' %}" alt="" width="26"
-									height="26"> Fanta Laranja</li>
-							<li class="list-group-item"><img src="{% static 'images/uva.jpg' %}" alt="" width="28"
-									height="28"> Fanta uva</li>
+									height="26">Fanta Laranja</li>
+							<li class="list-group-item"> <img src="{% static 'images/uva.jpg' %}" alt="" width="28"
+									height="28">Fanta uva</li>
 							<li class="list-group-item"><img src="{% static 'images/gp.jpg' %}" alt="" width="35"
 									height="35"> Guaraná/Pepsi de 1lt R$5,00</li>
 						</ul>

@@ -24,3 +24,19 @@ class Pedido(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+
+
+
+class Cadapio(models.Model):
+    nome = models.CharField(max_length=30)
+    proteina = models.CharField(max_length=70) 
+    acompanhamento = models.CharField(max_length=150)
+    salada = models.CharField(max_length=70)
+
+    class Meta:
+        verbose_name_plural = 'Cadapio'
+
+    def __str__(self):
+        return self.nome
