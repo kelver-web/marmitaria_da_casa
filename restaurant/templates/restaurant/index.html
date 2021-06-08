@@ -197,20 +197,20 @@
 		</div>
 		<div class="row bg-light">
 			<div class="col">
-				<form>
+				<form action="submit" method="POST">{% csrf_token %}
 					<div class="form-row">
 						<div class="form-row">
 							<div class="form-group col-6">
 								<h3>Monte seu pedido</h3>
 								<label for="inputProteinas"> Proteínas</label>
 								<input type="text" class="form-control" id="inputProteinas"
-									placeholder="frango, carne ..." name="proteinas" required>
+									placeholder="frango, carne ..." name="proteina" required>
 							</div>
 							<div class="form-group col-6">
 								<h3>Digite os detalhes</h3>
 								<label for="inputBebidaPequena">Bebida 250ml </label>
 								<input type="text" class="form-control" id="inputBebidaPequena"
-									placeholder="coca, guaraná, fanta..." name="bebidaPequena">
+									placeholder="coca, guaraná, fanta..." name="bebidapequena" required>
 							</div>
 							<div class="form-group col-6">
 								<label for="inputAcompanhamentos">Acompanhamentos </label>
@@ -220,17 +220,17 @@
 							<div class="form-group col-6">
 								<label for="inputQuantBebidaPequena">Quantidade Bebida 250ml</label>
 								<input type="text" class="form-control" id="inputQuantBebidaPequena"
-									placeholder="1, 2, 3..." name="quantidadeBebidaPequena">
+									placeholder="1, 2, 3..." name="quantidadeBebidaPequena" required>
 							</div>
 							<div class="form-group col-6">
 								<label for="inputSaladas">Saladas</label>
-								<input type="#" class="form-control" id="inputSaladas" placeholder="tomate, alface ..."
-									name="saladas" required>
+								<input type="#" class="form-control" id="inputSaladas" placeholder="tomate, alface ..." name="saladas" required>
+									
 							</div>
 							<div class="form-group col-6">
 								<label for="inputBebidaGrande">Bebida de 1Lt</label>
 								<input type="text" class="form-control" id="inputBebidaGrande"
-									placeholder="pepsi, guaraná..." name="bebidaGrande">
+									placeholder="pepsi, guaraná..." name="bebidaGrande" required>
 							</div>
 							<div class="form-group col-6">
 								<label for="inputValorRefeicao">Valor da Refeição</label>
@@ -239,28 +239,28 @@
 							</div>
 							<div class="form-group col-6">
 								<label for="inputBebidaDe1lt">Quantidade Bebida 1Lt</label>
-								<input type="#" class="form-control" id="inputBebidaDe1lt" placeholder="1, 2, 3..."
-									name="bebidadeumlt">
+								<input type="#" class="form-control" id="inputBebidaDe1lt" placeholder="1, 2, 3..." name="bebidadeumlt" required>
+									
 							</div>
 							<div class="form-group col-6">
 								<label for="inputNome">Nome</label>
-								<input type="#" class="form-control" id="inputNome" placeholder="nome" name="nome"
-									required>
+								<input type="#" class="form-control" id="inputNome" placeholder="nome" name="nome" required>
+									
 							</div>
 							<div class="form-group col-6">
 								<label for="inputEndereco">Endereço</label>
-								<input type="text" class="form-control" id="inputEndereco" placeholder="endereço"
-									name="endereço" required>
+								<input type="text" class="form-control" id="inputEndereco" placeholder="endereco" name="endereco" required>
+									
 							</div>
 							<div class="form-group col-6">
 								<label for="inputnumero"> Nº</label>
-								<input type="text" class="form-control" id="inputnumero" placeholder="nº" name="numero"
-									required>
+								<input type="text" class="form-control" id="inputnumero" placeholder="nº" name="numero" required>
+									
 							</div>
 							<div class="form-group col-6">
 								<label for="inputBairo"> Bairro</label>
 								<input type="text" class="form-control" id="inputBairo" placeholder="bairro"
-									name="email" required>
+									name="bairro" required>
 							</div>
 							<div class="form-group col-6">
 								<label for="inputTel"> Telefone</label>
@@ -274,8 +274,7 @@
 							</div>
 							<div class="form-group col-12">
 								<label for="inputObservacoes"> Observações</label>
-								<textarea class="form-control" rows="4" id="inputObservacoes" placeholder="observações"
-									name="observacao"></textarea>
+								<textarea class="form-control" rows="4" id="inputObservacoes" placeholder="observacoes" name="observacao"></textarea>	
 							</div>
 						</div>
 					</div>

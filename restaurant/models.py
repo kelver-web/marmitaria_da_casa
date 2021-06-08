@@ -10,7 +10,7 @@ class Pedido(models.Model):
     saladas = models.CharField(max_length=80)
     valor_refeicao = models.DecimalField(max_digits=10, decimal_places=2)
     sabor_bebida250 = models.CharField(max_length=20, verbose_name='sabor de 250ml')
-    quantidade_bebida_250 = models.CharField(max_length=20, verbose_name='quant. bebida 250ml')
+    quantidade_bebida_250 = models.CharField(max_length=20, verbose_name='quantidade bebida 250ml')
     bebida_1lt = models.CharField(max_length=15)
     quantidade_bebida_1lt = models.CharField(max_length=20)
     nome = models.CharField(max_length=50)
@@ -26,11 +26,8 @@ class Pedido(models.Model):
         return self.nome
 
 
-
-
-
 class Cadapio(models.Model):
-    nome = models.CharField(max_length=30)
+    nome = models.CharField(max_length=40)
     proteina = models.CharField(max_length=70) 
     acompanhamento = models.CharField(max_length=150)
     salada = models.CharField(max_length=70)
