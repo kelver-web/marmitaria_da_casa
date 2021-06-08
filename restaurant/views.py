@@ -60,5 +60,5 @@ def pedido(request):
         else:
             Pedido.objects.create(proteinas=proteinas, sabor_bebida250=sabor_bebida250,
                                 acompanhamentos=acompanhamentos, quantidade_bebida_250=quantidade_bebida_250,
-                                saladas=saladas, bebida_1lt=bebida_1lt, valor_refeicao=valor_refeicao,quantidade_bebida_1lt=quantidade_bebida_1lt, nome=nome, endereco=endereco, numero=numero, bairro=bairro, telefone=telefone, email=email, observacao=observacao)
+                                saladas=saladas, bebida_1lt=bebida_1lt, valor_refeicao=valor_refeicao,quantidade_bebida_1lt=quantidade_bebida_1lt, nome=nome, endereco=endereco, numero=numero, bairro=bairro, telefone=telefone, email=email, observacao=observacao, usuario=usuario)
     return redirect('/index')
