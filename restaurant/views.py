@@ -61,4 +61,8 @@ def pedido(request):
             Pedido.objects.create(proteinas=proteinas, sabor_bebida250=sabor_bebida250,
                                 acompanhamentos=acompanhamentos, quantidade_bebida_250=quantidade_bebida_250,
                                 saladas=saladas, bebida_1lt=bebida_1lt, valor_refeicao=valor_refeicao,quantidade_bebida_1lt=quantidade_bebida_1lt, nome=nome, endereco=endereco, numero=numero, bairro=bairro, telefone=telefone, email=email, observacao=observacao, usuario=usuario)
-    return redirect('/index')
+            try:
+                messages.info(request, 'Seu pedido foi enviado com sucesso!')
+            except messages.error:
+                messages.info(request, 'Ops, seu pedido teve um problema, tente novamente mais terde!')
+    return redirect('/index/#Pedido')

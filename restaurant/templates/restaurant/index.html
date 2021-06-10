@@ -4,7 +4,6 @@
 
 {% block content %}
 <html>
-
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<div id="Welcome">
 		<!---Start navigation Bar -->
@@ -193,6 +192,13 @@
 			<div class="col navMenu">
 				<h2 class="text-center">~ Pedido ~</h2>
 				<h5 class="text-center">Informe seu pedido de acordo com a especificação do menu</h5>
+				{% if messages %}
+					<ul class="text-center col-12">
+						{% for message in messages %}
+							<p {% if message.tags %} class="alert alert-{{ message.tags }} text-center"{% endif %}>{{ message }}</p>
+						{% endfor %}
+					</ul>
+				{% endif %}
 			</div>
 		</div>
 		<div class="row bg-light">
