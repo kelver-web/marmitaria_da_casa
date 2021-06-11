@@ -4,31 +4,31 @@
 
 
 {% block content %}
-
-<div class="row">
-    <div class="col navMenu">
-        <h2 class="text-center"><img class="rounded-circle" src="{% static 'images/marmitaria.png' '%}" width="50"
-                height="50" class="d-inline-block" alt=""> ~ Registro de Usuário ~</h2>
+<div class="register">
+    <div class="row">
+        <div class="col navMenu">
+            <h2 class="text-center"><img class="rounded-circle" src="{% static 'images/marmitaria.png' '%}" width="50"
+                    height="50" class="d-inline-block" alt=""> ~ Registro de Usuário ~</h2>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-4 offset-md-4 bg-light">
-        <div>
-            <div class="body">
-                <form method="POST">
-                    {% csrf_token %}
-                    <br>
-                    <input type="hidden" name="next" value="{{ next }}">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 bg-light">
+            <div>
+                <div class="body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <br>
+                        <input type="hidden" name="next" value="{{ next }}">
 
-                    {{ form|crispy }}
-                    <br>
-                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
-                    <br>
-                </form>
-                <p class="text-center">Já possui uma conta? <a href="/accounts/login">Clique aqui</a></p>
+                        {{ form|crispy }}
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                        <br>
+                    </form>
+                    <p class="text-center">Já possui uma conta? <a href="/accounts/login">Clique aqui</a></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 {% endblock %}

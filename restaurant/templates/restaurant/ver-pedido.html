@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="text-center">
+        <div class="page-header">
+            <h2>Olá {{ user }}</h2>
+            <p>em breve teremos a página de visualização de pedidos </p>
+        </div>
+        Você tem {{ pedidos }} {% if pedidos > 1 %}pedidos em abertos{% else %}pedido em  aberto{% endif %}
+        <br> 
+    </div>
+{% endblock %}

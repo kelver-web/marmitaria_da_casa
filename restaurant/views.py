@@ -16,7 +16,7 @@ def index(request):
 
 
 @login_required
-def pedido(request):
+def create_pedido(request):
     if request.method == 'POST':
         proteinas = request.POST.get('proteina')
         sabor_bebida250 = request.POST.get('bebidapequena')
@@ -41,21 +41,21 @@ def pedido(request):
             pedidos = Pedido.objects.get(id=id)
 
             if pedidos.usuario == usuario:
-                pedido.proteinas = proteinas
-                pedido.sabor_bebida250 = sabor_bebida250
-                pedido.acompanhamentos = acompanhamentos
-                pedido.quantidade_bebida_250 = quantidade_bebida_250
-                pedido.saladas = saladas
-                pedido.bebida_1lt = bebida_1lt
-                pedido.valor_refeicao = valor_refeicao
-                pedido.quantidade_bebida_1lt = quantidade_bebida_1lt
-                pedido.nome = nome
-                pedido.endereco = endereco
-                pedido.numero = numero
-                pedido.bairro = bairro
-                pedido.telefone = telefone
-                pedido.email = email
-                pedido.observacao = observacao
+                pedidos.proteinas = proteinas
+                pedidos.sabor_bebida250 = sabor_bebida250
+                pedidos.acompanhamentos = acompanhamentos
+                pedidos.quantidade_bebida_250 = quantidade_bebida_250
+                pedidos.saladas = saladas
+                pedidos.bebida_1lt = bebida_1lt
+                pedidos.valor_refeicao = valor_refeicao
+                pedidos.quantidade_bebida_1lt = quantidade_bebida_1lt
+                pedidos.nome = nome
+                pedidos.endereco = endereco
+                pedidos.numero = numero
+                pedidos.bairro = bairro
+                pedidos.telefone = telefone
+                pedidos.email = email
+                pedidos.observacao = observacao
 
         else:
             Pedido.objects.create(proteinas=proteinas, sabor_bebida250=sabor_bebida250,
@@ -66,3 +66,11 @@ def pedido(request):
             except messages.error:
                 messages.info(request, 'Ops, seu pedido teve um problema, tente novamente mais terde!')
     return redirect('/index/#Pedido')
+
+
+@login_required
+def read_pedido(request):
+    usuario = request.user
+    pedidos = Pedido.objects.filter(usuario=usuario).count()
+    context = {'pedidos': pedidos}
+    return render(request, 'restaurant/ver-pedido.html', context=context)

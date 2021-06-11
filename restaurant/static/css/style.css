@@ -1,5 +1,6 @@
 body{
 	font-family: 'Merienda';font-size: 15px;
+
 }
 .nav-item{
    padding-right: 12px;
@@ -92,3 +93,27 @@ footer{
    bottom: 0px;
    padding-top: 20px;
 }
+
+.login{
+   background-image: url('../images/slider2.jpg');
+   background-size: cover;
+   background-position-y: -100px;
+   padding-bottom: 162px;
+   margin: 0;
+}
+.col-md-4{
+   border-radius: 15px;
+}
+
+.register{
+   background-image: url('../images/slider3.jpg');
+   background-size: cover;
+  
+   padding-bottom: 150px;
+   margin: 0;
+}
+
+.row{
+   margin: 0;
+}
+

@@ -5,6 +5,8 @@ from .import views
 
 urlpatterns = [
     path('index/', views.index),
-    path('index/submit', views.pedido),
+    path('index/submit', views.create_pedido),
     path('', RedirectView.as_view(url='/index/')),
+    path('read_pedido/', views.read_pedido),
+    
 ]

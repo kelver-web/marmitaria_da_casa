@@ -32,7 +32,10 @@
 						<a class="nav-link" href="#Pedido">Pedido</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#OurLocation">Nossa Localização</a>
+						<a class="nav-link" href="/read_pedido">Ver Pedido</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#OurLocation">Localização</a>
 					</li>
 					{% endif %}
 					{% if user.is_authenticated %}
@@ -195,7 +198,7 @@
 				{% if messages %}
 					<ul class="text-center col-12">
 						{% for message in messages %}
-							<p {% if message.tags %} class="alert alert-{{ message.tags }} text-center"{% endif %}>{{ message }}</p>
+							<p {% if message.tags %} class="alert alert-{{ message.tags }} text-center"{% endif %}>&#128232;  {{ message }}</p>
 						{% endfor %}
 					</ul>
 				{% endif %}
