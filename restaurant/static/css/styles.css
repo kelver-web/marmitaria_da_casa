@@ -1,6 +1,5 @@
 body {
 	font-family: 'Merienda';font-size: 15px;
-
 }
 .nav-item{
    padding-right: 12px;
@@ -80,9 +79,14 @@ body {
 }
 
 .footer{
-   margin-bottom: 30px;
+   margin-bottom: 0;
    margin-top: 30px;
-   padding-top: 20px;
+   padding-top: 10px; 
+}
+
+.footer p {
+   margin: 4%;
+   text-align: center;
 }
 
 .social-icon{
@@ -92,10 +96,28 @@ body {
 .login {
    background-image: url('../images/slider2.jpg');
    background-size: cover;
-   background-position-y: -100px;
-   padding-bottom: 162px;
-   margin: 0;
+   background-position-y: -50px;
+   padding-bottom: 61px;
+   margin-bottom: 0;
+   
 }
+
+.navMenu .text-center{
+  padding-top: 100px;
+}
+
+h2 {
+   text-align: center;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+h5 {
+   text-align: center;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
 .col-md-4{
    border-radius: 15px;
 }
@@ -103,9 +125,7 @@ body {
 .register{
    background-image: url('../images/slider3.jpg');
    background-size: cover;
-  
-   padding-bottom: 150px;
-   margin: 0;
+   padding-bottom: 30px;
 }
 
 .row{

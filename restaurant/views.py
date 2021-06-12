@@ -25,6 +25,7 @@ def create_pedido(request):
         saladas = request.POST.get('saladas')
         bebida_1lt = request.POST.get('bebidaGrande')
         valor_refeicao = request.POST.get('valorrefeicao')
+        quantidade_refeicao = request.POST.get('quantidaderefeicao')
         quantidade_bebida_1lt = request.POST.get('bebidadeumlt')
         nome = request.POST.get('nome')
         endereco = request.POST.get('endereco')
@@ -48,6 +49,7 @@ def create_pedido(request):
                 pedidos.saladas = saladas
                 pedidos.bebida_1lt = bebida_1lt
                 pedidos.valor_refeicao = valor_refeicao
+                pedidos.quantidade_refeicao = quantidade_refeicao
                 pedidos.quantidade_bebida_1lt = quantidade_bebida_1lt
                 pedidos.nome = nome
                 pedidos.endereco = endereco
@@ -60,7 +62,9 @@ def create_pedido(request):
         else:
             Pedido.objects.create(proteinas=proteinas, sabor_bebida250=sabor_bebida250,
                                 acompanhamentos=acompanhamentos, quantidade_bebida_250=quantidade_bebida_250,
-                                saladas=saladas, bebida_1lt=bebida_1lt, valor_refeicao=valor_refeicao,quantidade_bebida_1lt=quantidade_bebida_1lt, nome=nome, endereco=endereco, numero=numero, bairro=bairro, telefone=telefone, email=email, observacao=observacao, usuario=usuario)
+                                saladas=saladas, bebida_1lt=bebida_1lt, valor_refeicao=valor_refeicao,
+                                quantidade_refeicao=quantidade_refeicao,
+                                quantidade_bebida_1lt=quantidade_bebida_1lt, nome=nome, endereco=endereco, numero=numero, bairro=bairro, telefone=telefone, email=email, observacao=observacao, usuario=usuario)
             try:
                 messages.info(request, 'Seu pedido foi enviado com sucesso!')
             except messages.error:
@@ -71,6 +75,6 @@ def create_pedido(request):
 @login_required
 def read_pedido(request):
     usuario = request.user
-    pedidos = Pedido.objects.filter(usuario=usuario).count()
+    pedidos = Pedido.objects.filter(usuario=usuario)
     context = {'pedidos': pedidos}
     return render(request, 'restaurant/ver-pedido.html', context=context)

@@ -4,49 +4,10 @@
 
 {% block content %}
 <html>
+
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<div id="Welcome">
-		<!---Start navigation Bar -->
-		<nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
-			<a class="navbar-brand" href="#Welcome">
-				<img class="rounded-circle" src="{% static 'images/marmitaria.png' '%}" width="50" height="50"
-					class="d-inline-block" alt=""> Marmitaria da Casa
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-				aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav ml-auto">
-					{% if user.is_authenticated %}
-					<li class="nav-item">
-						<a class="nav-link" href="#Welcome">Bem Vindo</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#Restaurant">Restaurante</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#Cardapio">Cardápio</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#Pedido">Pedido</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/read_pedido">Ver Pedido</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#OurLocation">Localização</a>
-					</li>
-					{% endif %}
-					{% if user.is_authenticated %}
-					<li class="nav-item">
-						<a class="nav-link" href="/accounts/logout">Sair</a>
-					</li>
-					{% endif %}
-				</ul>
-			</div>
-		</nav>
-		<!--- End Navigation Bar -->
+		
 		<!--- Start Carousel -->
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
@@ -95,7 +56,7 @@
 	<div class="container">
 		<div class="row" id="Restaurant">
 			<div class="col navMenu">
-				<h2 class="text-center">~ Restaurant ~</h2>
+				<h2>~ Restaurant ~</h2>
 			</div>
 		</div>
 		<div class="row bg-light">
@@ -133,7 +94,7 @@
 		<!--- Start of Menu-->
 		<div class="row" id="Cardapio">
 			<div class="col navMenu">
-				<h2 class="text-center">~ Cardápio ~</h2>
+				<h2>~ Cardápio ~</h2>
 			</div>
 		</div>
 		<div class="row bg-light">
@@ -144,7 +105,8 @@
 						<h5 class="card-title">~ Cardápio do Dia ~ <br> R$7.00 R$11.00 R$13.00 </h5>
 						{% for cardapio in cardapios %}
 						<ul class="list-group list-group-flush">
-							<li class="list-group-item"><b>Proteínas:</b> {{ cardapio.proteina }} </b><b><br> Obs: apenas duas proteínas por refeição, escolha a sua.</b></li>
+							<li class="list-group-item"><b>Proteínas:</b> {{ cardapio.proteina }} </b><b><br> Obs:
+									apenas duas proteínas por refeição, escolha a sua.</b></li>
 							<li class="list-group-item"><b>Acompanhamentos:</b> {{ cardapio.acompanhamento }}</li>
 							<li class="list-group-item"><b>Saladas:</b> {{ cardapio.salada }}</li>
 							{% endfor %}
@@ -161,8 +123,8 @@
 							<li class="list-group-item"><img src="{% static 'images/Coca-Cola-Can-icon.png' %}"
 									width="30" height="30" alt="">Coca Cola
 							<li class="list-group-item">
-							<img src="{% static 'images/sprite.jpg' %}"
-							alt="" width="34" height="34">Sprite</li>
+								<img src="{% static 'images/sprite.jpg' %}" alt="" width="34" height="34">Sprite
+							</li>
 							<li class="list-group-item"><img src="{% static 'images/kuat.jpg' %}" alt="" width="35"
 									height="35">Guaraná Kuat</li>
 							<li class="list-group-item"><img src="{% static 'images/fanta.jpg' %}" alt="" width="26"
@@ -191,16 +153,16 @@
 			</div>
 		</div>
 		<!--- End of Menu -->
-		<div class="row" id="Pedido">
+		<div id="Pedido">
 			<div class="col navMenu">
-				<h2 class="text-center">~ Pedido ~</h2>
-				<h5 class="text-center">Informe seu pedido de acordo com a especificação do menu</h5>
+				<h2>~ Pedido ~</h2>
+				<h5>Informe seu pedido de acordo com a especificação do menu</h5>
 				{% if messages %}
-					<ul class="text-center col-12">
-						{% for message in messages %}
-							<p {% if message.tags %} class="alert alert-{{ message.tags }} text-center"{% endif %}>&#128232;  {{ message }}</p>
-						{% endfor %}
-					</ul>
+				<ul class="text-center col-12">
+					{% for message in messages %}
+					<p {% if message.tags %} class="alert alert-{{ message.tags }} text-center" {% endif %}>&#128232; {{ message }}</p>
+					{% endfor %}
+				</ul>
 				{% endif %}
 			</div>
 		</div>
@@ -233,8 +195,9 @@
 							</div>
 							<div class="form-group col-6">
 								<label for="inputSaladas">Saladas</label>
-								<input type="#" class="form-control" id="inputSaladas" placeholder="tomate, alface ..." name="saladas" required>
-									
+								<input type="#" class="form-control" id="inputSaladas" placeholder="tomate, alface ..."
+									name="saladas" required>
+
 							</div>
 							<div class="form-group col-6">
 								<label for="inputBebidaGrande">Bebida de 1Lt</label>
@@ -248,23 +211,33 @@
 							</div>
 							<div class="form-group col-6">
 								<label for="inputBebidaDe1lt">Quantidade Bebida 1Lt</label>
-								<input type="#" class="form-control" id="inputBebidaDe1lt" placeholder="1, 2, 3..." name="bebidadeumlt" required>
-									
+								<input type="#" class="form-control" id="inputBebidaDe1lt" placeholder="1, 2, 3..."
+									name="bebidadeumlt" required>
+
+							</div>
+							<div class="form-group col-6">
+								<label for="inputQuantRefeicao">Quantidade Refição</label>
+								<input type="#" class="form-control" id="inputQuantRefeicao" placeholder="1, 2, 3..."
+									name="quantidaderefeicao" required>
+
 							</div>
 							<div class="form-group col-6">
 								<label for="inputNome">Nome</label>
-								<input type="#" class="form-control" id="inputNome" placeholder="nome" name="nome" required>
-									
+								<input type="#" class="form-control" id="inputNome" placeholder="nome" name="nome"
+									required>
+
 							</div>
 							<div class="form-group col-6">
 								<label for="inputEndereco">Endereço</label>
-								<input type="text" class="form-control" id="inputEndereco" placeholder="endereco" name="endereco" required>
-									
+								<input type="text" class="form-control" id="inputEndereco" placeholder="endereco"
+									name="endereco" required>
+
 							</div>
 							<div class="form-group col-6">
 								<label for="inputnumero"> Nº</label>
-								<input type="text" class="form-control" id="inputnumero" placeholder="nº" name="numero" required>
-									
+								<input type="text" class="form-control" id="inputnumero" placeholder="nº" name="numero"
+									required>
+
 							</div>
 							<div class="form-group col-6">
 								<label for="inputBairo"> Bairro</label>
@@ -283,7 +256,8 @@
 							</div>
 							<div class="form-group col-12">
 								<label for="inputObservacoes"> Observações</label>
-								<textarea class="form-control" rows="4" id="inputObservacoes" placeholder="observacoes" name="observacao"></textarea>	
+								<textarea class="form-control" rows="4" id="inputObservacoes" placeholder="observacoes"
+									name="observacao"></textarea>
 							</div>
 						</div>
 					</div>
@@ -299,7 +273,7 @@
 		<!--- Start of Our Location -->
 		<div class="row" id="OurLocation">
 			<div class="col navMenu">
-				<h2 class="text-center">~ Nossa Localização ~</h2>
+				<h2>~ Nossa Localização ~</h2>
 			</div>
 		</div>
 		<div class="container text-center">
@@ -326,21 +300,10 @@
 				</div>
 			</div>
 			<!--- End of Our Location -->
-			<div class="footer">
-				<div class="row footer bg-light">
-					<div class="col">
-						<p class="text-center"><img class="rounded-circle" src="{% static 'images/marmitaria.png' '%}"
-								width="40" height="40" class="d-inline-block" alt=""> Marmitaria da Casa</p>
-					</div>
-					<div class="col">
-						<p class="text-center">Copyright &copy; 2021</p>
-					</div>
-					<div class="col">
-						<p class="text-center">Powered by: <a href="#">Kelver Alves</a></p>
-					</div>
-				</div>
-			</div>
+			
 		</div>
+	</div>
+	{% include "restaurant/footer.html" %}
 </body>
 
 </html>

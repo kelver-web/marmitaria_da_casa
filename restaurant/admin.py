@@ -6,7 +6,7 @@ from restaurant.models import Pedido, Cadapio
 
 
 class PedidoAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'proteinas', 'acompanhamentos', 'saladas', 'valor_refeicao',
+    list_display = ['nome', 'proteinas', 'acompanhamentos', 'saladas', 'valor_refeicao',    'quantidade_refeicao',
                     'sabor_bebida250', 'quantidade_bebida_250', 'bebida_1lt',
                     'quantidade_bebida_1lt', 'endereco', 'numero', 'bairro', 'email', 'telefone',  'data', 'observacao'
                     ]

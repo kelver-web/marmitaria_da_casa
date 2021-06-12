@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 # Create your models here.
 
 
@@ -10,6 +11,7 @@ class Pedido(models.Model):
     acompanhamentos = models.CharField(max_length=100)
     saladas = models.CharField(max_length=80)
     valor_refeicao = models.DecimalField(max_digits=10, decimal_places=2)
+    quantidade_refeicao = models.CharField(max_length=20)
     sabor_bebida250 = models.CharField(max_length=20, verbose_name='sabor de 250ml')
     quantidade_bebida_250 = models.CharField(max_length=20, verbose_name='quantidade bebida 250ml')
     bebida_1lt = models.CharField(max_length=15)
